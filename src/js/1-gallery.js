@@ -74,8 +74,6 @@ const container = document.querySelector('.gallery');
 
 container.innerHTML = createMarkup(images);
 
-container.insertAdjacentHTML('beforeend', createMarkup(images));
-
 function createMarkup(arr) {
   return arr
     .map(
