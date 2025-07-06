@@ -66,12 +66,13 @@ const images = [
   },
 ];
 
-// Описаний в документації
 import SimpleLightbox from 'simplelightbox';
-// Додатковий імпорт стилів
+
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const container = document.querySelector('.gallery');
+
+container.innerHTML = createMarkup(images);
 
 container.insertAdjacentHTML('beforeend', createMarkup(images));
 
@@ -92,3 +93,9 @@ function createMarkup(arr) {
     )
     .join('');
 }
+
+new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});
